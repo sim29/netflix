@@ -3,14 +3,18 @@
   object-fit: contain;
   width: 100%;
   max-height: 200px;
-  margin-right: 10px;
-}
-.row__posters {
-  display: flex;
+  margin-right: 2px;
+  padding: 10px;
 }
 .poster:hover {
-  background-color: aliceblue;
   cursor: pointer;
-  z-index: 100;
   transform: scale(1.1);
+}
+
+.row__posters {
+  display: flex;
+  overflow-x: scroll;
+}
+.row__posters::-webkit-scrollbar {
+  display: none;
 }

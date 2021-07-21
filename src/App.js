@@ -9,6 +9,8 @@ function App() {
       <div className="App-Rows">
         <Row title="Latest" fetchURL={request.Latest} />
         <Row title="Trending" fetchURL={request.Popular} />
+        <Row title="Trending" fetchURL={request.Popular} />
+        <Row title="Trending" fetchURL={request.Popular} />
       </div>
     </div>
   );
