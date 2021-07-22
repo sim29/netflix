@@ -25,21 +25,15 @@ function Row(props) {
       {/* poster */}
       <div className="row__posters">
         {/**/}
-        {movies.map((movie) =>
-          props.fullsized ? (
-            <img
-              className="poster fullsized"
-              src={`${imgPath}${movie.poster_path}`}
-              alt={movie.title}
-            />
-          ) : (
-            <img
-              className="poster"
-              src={`${imgPath}${movie.backdrop_path}`}
-              alt={movie.title}
-            />
-          )
-        )}
+        {movies.map((movie) => (
+          <img
+            className={`poster ${props.fullsized && "fullsized"}`}
+            src={`${imgPath}${
+              props.fullsized ? movie.poster_path : movie.backdrop_path
+            }`}
+            alt={movie.title}
+          />
+        ))}
         {/**/}
       </div>
     </div>
