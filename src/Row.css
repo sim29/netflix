@@ -2,10 +2,15 @@
   /* max-width: 200px; */
   object-fit: contain;
   width: 100%;
-  max-height: 200px;
-  margin-right: 2px;
-  padding: 10px;
+  max-height: 100px;
+  margin-right: 10px;
+  /* padding: 20px; */
+  transition: transform 600ms;
 }
+.fullsized {
+  max-height: 250px;
+}
+
 .poster:hover {
   cursor: pointer;
   transform: scale(1.1);
@@ -14,6 +19,7 @@
 .row__posters {
   display: flex;
   overflow-x: scroll;
+  padding: 20px;
 }
 .row__posters::-webkit-scrollbar {
   display: none;

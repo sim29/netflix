@@ -10,7 +10,7 @@ function Row(props) {
   useEffect(() => {
     async function fetchData() {
       const req = await axios.get(props.fetchURL);
-      console.table(req.data.results);
+      // console.table(req.data.results);
       console.log(req.data.results);
       setmovies(req.data.results);
 
@@ -24,13 +24,23 @@ function Row(props) {
       <h1>{props.title}</h1>
       {/* poster */}
       <div className="row__posters">
-        {movies.map((movie) => (
-          <img
-            className="poster"
-            src={`${imgPath}${movie.poster_path}`}
-            alt={movie.title}
-          />
-        ))}
+        {/**/}
+        {movies.map((movie) =>
+          props.fullsized ? (
+            <img
+              className="poster fullsized"
+              src={`${imgPath}${movie.poster_path}`}
+              alt={movie.title}
+            />
+          ) : (
+            <img
+              className="poster"
+              src={`${imgPath}${movie.backdrop_path}`}
+              alt={movie.title}
+            />
+          )
+        )}
+        {/**/}
       </div>
     </div>
   );
