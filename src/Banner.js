@@ -54,6 +54,7 @@ function Banner() {
           {truncate(randomMovie.overview)}
         </h5>
       </div>
+      <div className="banner__gradient"></div>
     </header>
   );
 }
