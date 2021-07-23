@@ -6,7 +6,6 @@ import Banner from "./Banner";
 function App() {
   return (
     <div className="App">
-      <h1>Netflix clone 📺</h1>
       {/* App Banner */}
       <div className="App__banner">
         <Banner />

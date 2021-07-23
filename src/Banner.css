@@ -1,0 +1,23 @@
+.banner__logo {
+  margin: 10px;
+  padding: 10px;
+}
+.banner__image {
+  /* width: 1000px;
+  max-height: 40%; */
+  object-fit: contain;
+}
+.banner__container {
+  height: 40vh;
+  padding: 20px;
+  margin-left: 10px;
+}
+.banner__title {
+  margin-top: 80px;
+  font-weight: 800;
+  font-size: 3rem;
+}
+.banner__description {
+  width: 450px;
+  text-shadow: black;
+}
