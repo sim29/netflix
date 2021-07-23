@@ -1,0 +1,12 @@
+.footer {
+  display: flex;
+}
+.footer__name {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  padding: 10px;
+  border: 1px solid white;
+}
+a:visited {
+  color: rgba(161, 199, 255, 0.767);
+}
