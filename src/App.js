@@ -1,11 +1,16 @@
 import "./App.css";
 import Row from "./Row";
 import request from "./request";
+import Banner from "./Banner";
 
 function App() {
   return (
     <div className="App">
       <h1>Netflix clone 📺</h1>
+      {/* App Banner */}
+      <div className="App__banner">
+        <Banner />
+      </div>
       <div className="App-Rows">
         <Row
           title="NETFLIX ORIGINALS"

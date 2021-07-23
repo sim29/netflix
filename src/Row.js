@@ -21,7 +21,7 @@ function Row(props) {
   return (
     <div>
       {/* title */}
-      <h1>{props.title}</h1>
+      <h2>{props.title}</h2>
       {/* poster */}
       <div className="row__posters">
         {/**/}
