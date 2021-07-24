@@ -1,0 +1,17 @@
+.navbar {
+  position: fixed;
+  /* background-color: #111; */
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  padding: 20px;
+}
+.navbar__logo {
+  margin-left: 0px;
+  /* margin-right: auto; */
+}
+.navbar__avatar {
+  margin-right: 0px;
+  position: fixed;
+  right: 20px;
+}
