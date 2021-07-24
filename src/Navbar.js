@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 
 function Navbar() {
+  const [handleShow, setHandleShow] = useState(false);
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      if (window.scrollY > 100) {
+        setHandleShow(true);
+      } else setHandleShow(false);
+    });
+    return () => {
+      window.removeEventListener("scroll");
+    };
+  }, []);
   return (
-    <div className="navbar">
+    <div className={`navbar  ${handleShow && "navbar__transition"}`}>
       {/* Netflix Logo */}
       <img
         className="navbar__logo"

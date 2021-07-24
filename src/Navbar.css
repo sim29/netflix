@@ -5,13 +5,19 @@
   justify-content: space-between;
   display: flex;
   padding: 20px;
+  transition: all 450ms;
 }
 .navbar__logo {
   margin-left: 0px;
+  position: fixed;
   /* margin-right: auto; */
 }
 .navbar__avatar {
   margin-right: 0px;
   position: fixed;
   right: 20px;
+}
+.navbar__transition {
+  background-color: #111;
+  height: 25px;
 }
