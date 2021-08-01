@@ -3,13 +3,12 @@ import axios from "./axios";
 import "./Row.css";
 import { useState, useEffect } from "react";
 import YouTube from "react-youtube";
-import "movie-trailer";
 import movieTrailer from "movie-trailer";
 
 function Row(props) {
   const API_KEY = "8562c99573f71513c73e7781f282f930";
   const [movies, setmovies] = useState([]);
-  const [movieClicked, setMovieClicked] = useState(false);
+  const [movieURL, setMovieURL] = useState("");
   const imgPath = "https://image.tmdb.org/t/p/original";
   const opts = {
     height: "360",
@@ -32,19 +31,27 @@ function Row(props) {
   }, [props.fetchURL]);
 
   async function movieClick(movie) {
-    console.log("clicked");
+    // console.log("clicked");
     // search for trailer
 
-    if (movieClicked) setMovieClicked(false);
+    if (movieURL != "") setMovieURL("");
     else {
-      console.log("name", movie.name);
+      console.log("name", movie.id);
       // using tmdb api for fetching YT vid instead movie-trailer dependencies
-      let trailerUrl = await axios.get(
-        `/movie/${"117023"}/videos?api_key=${API_KEY}`
-      );
-      console.log("YT vid id", trailerUrl.data.results[0].key);
+      let trailerUrl;
+      if (props.tvshows) {
+        trailerUrl = await axios.get(
+          `/tv/${movie.id}/videos?api_key=${API_KEY}`
+        );
+      } else {
+        trailerUrl = await axios.get(
+          `/movie/${movie.id}/videos?api_key=${API_KEY}`
+        );
+      }
 
-      setMovieClicked(true);
+      setMovieURL(
+        trailerUrl.data.results[0] ? trailerUrl.data.results[0].key : ""
+      );
     }
   }
   return (
@@ -66,7 +73,7 @@ function Row(props) {
         ))}
         {/**/}
       </div>
-      <div>{movieClicked && <YouTube videoId="kKJSsOuY1lM" opts={opts} />}</div>
+      <div>{movieURL && <YouTube videoId={movieURL} opts={opts} />}</div>
     </div>
   );
 }

@@ -2,8 +2,5 @@ for youtube dependencies:
 npm i react-youtube: pass video id and it will run the player
 for searching YT trailer:
 npm i --save movie-trailer : pass movie name and it will return the url for trailer > now we will have to extract the YT vid id > pass to above fn.
-  <Row title="Trending" fetchURL={request.fetchTrending} />
-        <Row title="Top Rated Movies" fetchURL={request.fetchTopRated} />
-        <Row title="Action Movies" fetchURL={request.fetchActionMovies} />
-        <Row title="Horror Movies" fetchURL={request.fetchHorrorMovies} />
-        <Row title="Documentaries" fetchURL={request.fetchDocumentaries} />
+
+Note: movie-trailer didnot work, so had to use TMDB api for vid trailer
