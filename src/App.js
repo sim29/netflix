@@ -19,11 +19,7 @@ function App() {
           fetchURL={request.fetchNetflixOriginals}
           fullsized
         />
-        <Row title="Trending" fetchURL={request.fetchTrending} />
-        <Row title="Top Rated Movies" fetchURL={request.fetchTopRated} />
-        <Row title="Action Movies" fetchURL={request.fetchActionMovies} />
-        <Row title="Horror Movies" fetchURL={request.fetchHorrorMovies} />
-        <Row title="Documentaries" fetchURL={request.fetchDocumentaries} />
+
         <Footer />
       </div>
     </div>
