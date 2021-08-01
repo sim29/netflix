@@ -38,9 +38,7 @@ function Row(props) {
     if (movieClicked) setMovieClicked(false);
     else {
       console.log("name", movie.name);
-      // movieTrailer("The War Next-door")
-      //   .then((result) => console.log("res", result))
-      //   .catch((error) => console.log(error));
+      // using tmdb api for fetching YT vid instead movie-trailer dependencies
       let trailerUrl = await axios.get(
         `/movie/${"117023"}/videos?api_key=${API_KEY}`
       );
