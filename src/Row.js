@@ -7,6 +7,7 @@ import "movie-trailer";
 import movieTrailer from "movie-trailer";
 
 function Row(props) {
+  const API_KEY = "8562c99573f71513c73e7781f282f930";
   const [movies, setmovies] = useState([]);
   const [movieClicked, setMovieClicked] = useState(false);
   const imgPath = "https://image.tmdb.org/t/p/original";
@@ -30,16 +31,20 @@ function Row(props) {
     fetchData();
   }, [props.fetchURL]);
 
-  function movieClick(movie) {
+  async function movieClick(movie) {
     console.log("clicked");
     // search for trailer
 
     if (movieClicked) setMovieClicked(false);
     else {
       console.log("name", movie.name);
-      movieTrailer("The War Next-door")
-        .then((result) => console.log("res", result))
-        .catch((error) => console.log(error));
+      // movieTrailer("The War Next-door")
+      //   .then((result) => console.log("res", result))
+      //   .catch((error) => console.log(error));
+      let trailerUrl = await axios.get(
+        `/movie/${"117023"}/videos?api_key=${API_KEY}`
+      );
+      console.log("YT vid id", trailerUrl.data.results[0].key);
 
       setMovieClicked(true);
     }
